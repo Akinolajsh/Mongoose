@@ -5,7 +5,7 @@ const userModel = require("../model/userModel");
 
 const getAllUser = async (req, res) => {
   try {
-    const getUsers = await userModel.find();
+    const getUsers = (await userModel.find()).reverse();
     res.status(200).json({
       message: "gotten all users",
       data: getUsers,
@@ -28,7 +28,7 @@ const newUser = async (req, res) => {
       password,
       isFemale,
     });
-    res.status(200).json({
+    res.status(201).json({
       message: "create a new users",
       data: createUser,
     });

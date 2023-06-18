@@ -38,3 +38,5 @@ const newUser = async (req, res) => {
     });
   }
 };
+
+module.exports= {getAllUser, newUser}
